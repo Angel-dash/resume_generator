@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 
 import { Info } from "../components/generalInfo";
 import { Experience } from "../components/experience";
 import { Education } from "../components/education";
+import { ExperienceForm } from "../components/letter";
 const page = () => {
 	return (
 		<div>
@@ -11,6 +13,7 @@ const page = () => {
 			<Experience />
 			<Experience />
 			<Education />
+			<ExperienceForm />
 		</div>
 	);
 };
