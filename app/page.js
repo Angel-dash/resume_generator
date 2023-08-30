@@ -1,21 +1,27 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import { Info } from "../components/generalInfo";
 import { Experience } from "../components/experience";
 import { Education } from "../components/education";
-import { ExperienceForm } from "../components/letter";
-const page = () => {
+import { InfoCard } from "../components/letter";
+
+export const ParentComponent = () => {
+	const [education, setEducation] = useState({
+		uniName: "",
+		gradYear: "",
+		degree: "",
+		startedYear: "",
+	});
 	return (
 		<div>
 			<h1>This is the home page</h1>
 			<Info />
 			<Experience />
-			<Experience />
 			<Education />
-			<ExperienceForm />
+			<InfoCard education={education} setEducation={setEducation} />
 		</div>
 	);
 };
 
-export default page;
+export default ParentComponent;

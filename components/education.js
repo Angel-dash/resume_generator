@@ -2,10 +2,12 @@
 import React from "react";
 import { useState } from "react";
 export const Education = () => {
-	const [uniName, setuniName] = useState("");
-	const [gradYear, setGradYear] = useState("");
-	const [degree, setDegree] = useState("");
-	const [startedYear, setStartedYear] = useState("");
+	const [education, setEducation] = useState({
+		uniName: "",
+		gradYear: "",
+		degree: "",
+		startedYear: "",
+	});
 	return (
 		<div>
 			<h1>Education background and Certificate</h1>
@@ -13,29 +15,29 @@ export const Education = () => {
 			<input
 				placeholder='Name of University/College'
 				type='text'
-				value={uniName}
-				onChange={(e) => setuniName(e.target.value)}
+				value={setEducation.uniName}
+				onChange={(e) => setEducation({ uniName: e.target.value })}
 			/>
 			<br />
 			<input
 				placeholder='Started Year'
 				type='text'
-				value={startedYear}
-				onChange={(e) => e.setStartedYear}
+				value={setEducation.startedYear}
+				onChange={(e) => setEducation({ startedYear: e.target.value })}
 			/>
 			<br />
 			<input
 				placeholder='Graduated Year:'
 				type='number'
-				value={gradYear}
-				onChange={(e) => setGradYear(e.target.value)}
+				value={setEducation.gradYear}
+				onChange={(e) => setEducation({ gradYear: e.target.value })}
 			/>
 			<br />
 			<input
 				placeholder='Degree'
 				type='text'
-				value={degree}
-				onChange={(e) => setDegree(e.target.value)}
+				value={setEducation.degree}
+				onChange={(e) => setEducation({ degree: e.target.value })}
 			/>
 		</div>
 	);

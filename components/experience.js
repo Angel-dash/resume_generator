@@ -4,10 +4,12 @@ import React from "react";
 import { useState } from "react";
 
 export const Experience = () => {
-	const [experience, setExperience] = useState("");
-	const [duration, setDuration] = useState("");
-	const [position, setPosition] = useState("");
-	const [company, setCompany] = useState("");
+	const [experience, setExperience] = useState({
+		Position: "",
+		Duration: "",
+		Experience: "",
+		Company: "",
+	});
 	return (
 		<div>
 			<label>Experience:</label>
@@ -15,29 +17,29 @@ export const Experience = () => {
 			<input
 				type='text'
 				placeholder='Position: '
-				value={position}
-				onChange={(event) => setPosition(event.target.value)}
+				value={setExperience.Position}
+				onChange={(event) => setExperience({ Position: event.target.value })}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Duration: '
-				value={duration}
-				onChange={(event) => setDuration(event.target.value)}
+				value={setExperience.Duration}
+				onChange={(event) => setExperience({ Duration: event.target.value })}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Job Description  '
-				value={experience}
-				onChange={(event) => setExperience(event.target.value)}
+				value={setExperience.experience}
+				onChange={(event) => setExperience({ Experience: event.target.value })}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Company Name: '
-				value={company}
-				onChange={(event) => setCompany(event.target.value)}
+				value={setExperience.Company}
+				onChange={(event) => setExperience({ Company: event.target.value })}
 			/>
 		</div>
 	);
