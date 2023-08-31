@@ -1,13 +1,8 @@
-"use client";
 import React from "react";
-import { useState } from "react";
-export const Education = () => {
-	const [education, setEducation] = useState({
-		uniName: "",
-		gradYear: "",
-		degree: "",
-		startedYear: "",
-	});
+
+export const Education = (props) => {
+	const { education, setEducation } = props;
+
 	return (
 		<div>
 			<h1>Education background and Certificate</h1>
@@ -15,29 +10,49 @@ export const Education = () => {
 			<input
 				placeholder='Name of University/College'
 				type='text'
-				value={setEducation.uniName}
-				onChange={(e) => setEducation({ uniName: e.target.value })}
+				value={education.uniName}
+				onChange={(e) =>
+					setEducation((oldvalues) => ({
+						...oldvalues,
+						uniName: e.target.value,
+					}))
+				}
 			/>
 			<br />
 			<input
 				placeholder='Started Year'
 				type='text'
-				value={setEducation.startedYear}
-				onChange={(e) => setEducation({ startedYear: e.target.value })}
+				value={education.startedYear}
+				onChange={(e) =>
+					setEducation((oldvalues) => ({
+						...oldvalues,
+						startedYear: e.target.value,
+					}))
+				}
 			/>
 			<br />
 			<input
 				placeholder='Graduated Year:'
 				type='number'
-				value={setEducation.gradYear}
-				onChange={(e) => setEducation({ gradYear: e.target.value })}
+				value={education.gradYear}
+				onChange={(e) =>
+					setEducation((oldvalues) => ({
+						...oldvalues,
+						gradYear: e.target.value,
+					}))
+				}
 			/>
 			<br />
 			<input
 				placeholder='Degree'
 				type='text'
-				value={setEducation.degree}
-				onChange={(e) => setEducation({ degree: e.target.value })}
+				value={education.degree}
+				onChange={(e) =>
+					setEducation((oldvalues) => ({
+						...oldvalues,
+						degree: e.target.value,
+					}))
+				}
 			/>
 		</div>
 	);

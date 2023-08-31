@@ -1,15 +1,7 @@
-"use client";
 import React from "react";
 
-import { useState } from "react";
-
-export const Experience = () => {
-	const [experience, setExperience] = useState({
-		Position: "",
-		Duration: "",
-		Experience: "",
-		Company: "",
-	});
+export const Experience = (props) => {
+	const { experience, setExperience } = props;
 	return (
 		<div>
 			<label>Experience:</label>
@@ -17,29 +9,37 @@ export const Experience = () => {
 			<input
 				type='text'
 				placeholder='Position: '
-				value={setExperience.Position}
-				onChange={(event) => setExperience({ Position: event.target.value })}
+				value={experience.Position}
+				onChange={(e) =>
+					setExperience((prev) => ({ ...prev, Position: e.target.value }))
+				}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Duration: '
-				value={setExperience.Duration}
-				onChange={(event) => setExperience({ Duration: event.target.value })}
+				value={experience.Duration}
+				onChange={(e) =>
+					setExperience(() => ({ ...prev, Duration: e.target.value }))
+				}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Job Description  '
-				value={setExperience.experience}
-				onChange={(event) => setExperience({ Experience: event.target.value })}
+				value={experience.Experience}
+				onChange={(e) =>
+					setExperience((prev) => ({ ...prev, Experience: e.target.value }))
+				}
 			/>
 			<br />
 			<input
 				type='text'
 				placeholder='Company Name: '
-				value={setExperience.Company}
-				onChange={(event) => setExperience({ Company: event.target.value })}
+				value={experience.Company}
+				onChange={(e) =>
+					setExperience((prev) => ({ ...prev, Company: e.target.value }))
+				}
 			/>
 		</div>
 	);

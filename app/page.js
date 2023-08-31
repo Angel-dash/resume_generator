@@ -13,13 +13,36 @@ export const ParentComponent = () => {
 		degree: "",
 		startedYear: "",
 	});
+	const [info, setInfo] = useState({
+		firstName: "",
+		lastName: "",
+		EmaiId: "",
+		phoneNumber: "",
+		Address: "",
+		DOB: "",
+		linkedin: "",
+	});
+	const [experience, setExperience] = useState({
+		Position: "",
+		Duration: "",
+		Experience: "",
+		Company: "",
+	});
 	return (
 		<div>
 			<h1>This is the home page</h1>
-			<Info />
-			<Experience />
-			<Education />
-			<InfoCard education={education} setEducation={setEducation} />
+			<Info info={info} setInfo={setInfo} />
+			<Experience experience={experience} setExperience={setExperience} />
+			<Education education={education} setEducation={setEducation} />
+
+			<InfoCard
+				education={education}
+				setEducation={setEducation}
+				info={info}
+				setInfo={setInfo}
+				experience={experience}
+				setExperience={setExperience}
+			/>
 		</div>
 	);
 };
