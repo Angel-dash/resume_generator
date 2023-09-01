@@ -20,7 +20,7 @@ export const Experience = (props) => {
 				placeholder='Duration: '
 				value={experience.Duration}
 				onChange={(e) =>
-					setExperience(() => ({ ...prev, Duration: e.target.value }))
+					setExperience((prev) => ({ ...prev, Duration: e.target.value }))
 				}
 			/>
 			<br />

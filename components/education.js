@@ -4,8 +4,10 @@ export const Education = (props) => {
 	const { education, setEducation } = props;
 
 	return (
-		<div>
-			<h1>Education background and Certificate</h1>
+		<div className='bg-white px-10 py-10 min-h-screen md:px-20 lg:px-40'>
+			<h1 className='text-base text-red-500 align-middle'>
+				Education background and Certificate
+			</h1>
 			<br />
 			<input
 				placeholder='Name of University/College'
