@@ -4,11 +4,11 @@ import jsPDF from "jspdf";
 
 export const InfoCard = (props) => {
 	const { education, experience, info } = props;
-	const pdRef = useRef();
+	const pdfRef = useRef();
 
 	const downloadPDF = () => {
 		const input = pdfRef.current;
-		html2canvas(input).then(() => {
+		html2canvas(input).then((canvas) => {
 			const imgData = canvas.toDataURL("image/png");
 			const pdf = new jsPDF("p", "mm", "a4", true);
 			const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -23,7 +23,8 @@ export const InfoCard = (props) => {
 				"PNG",
 				imgX,
 				imgY,
-				imgWidth * ratio * imgHeight * ratio
+				imgWidth * ratio,
+				imgHeight * ratio
 			);
 			pdf.save("Cv.pdf");
 		});
@@ -32,7 +33,7 @@ export const InfoCard = (props) => {
 	return (
 		<div
 			className='bg-gray-100 rounded-md p-10 mx-60 my-5 max-w-4xl sm:p-5 md:p-20 lg:p-40'
-			ref={pdRef}>
+			ref={pdfRef}>
 			<div className='flex '>
 				<h1 className='text-3xl  mx-auto text-gray-800 font-bold'>
 					{info.firstName} {info.lastName}
