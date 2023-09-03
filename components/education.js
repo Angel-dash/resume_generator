@@ -4,12 +4,13 @@ export const Education = (props) => {
 	const { education, setEducation } = props;
 
 	return (
-		<div className='bg-white px-10 py-10 min-h-screen md:px-20 lg:px-40'>
-			<h1 className='text-base text-red-500 align-middle'>
+		<div className='bg-gray-100 px-2 py-4 mx-60 md:px-20 lg:px-40 text-center rounded-md'>
+			<h1 className='font-semibold text-lg  text-black align-middle '>
 				Education background and Certificate
 			</h1>
 			<br />
 			<input
+				className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 				placeholder='Name of University/College'
 				type='text'
 				value={education.uniName}
@@ -22,6 +23,7 @@ export const Education = (props) => {
 			/>
 			<br />
 			<input
+				className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 				placeholder='Started Year'
 				type='text'
 				value={education.startedYear}
@@ -34,6 +36,7 @@ export const Education = (props) => {
 			/>
 			<br />
 			<input
+				className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 				placeholder='Graduated Year:'
 				type='number'
 				value={education.gradYear}
@@ -46,6 +49,7 @@ export const Education = (props) => {
 			/>
 			<br />
 			<input
+				className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 				placeholder='Degree'
 				type='text'
 				value={education.degree}

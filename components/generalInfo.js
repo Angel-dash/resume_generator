@@ -5,10 +5,12 @@ export const Info = (props) => {
 
 	return (
 		<form>
-			<div>
-				<h1>Enter your General Infomration below !!</h1>
-				<label>Name:</label>
+			<div className='bg-gray-100 px-2 py-4 mx-60 md:px-20 lg:px-40 text-center rounded-md'>
+				<h1 className=' font-semibold text-lg  text-black align-middle'>
+					Enter your General Infomration below !!
+				</h1>
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='Enter your first name:   '
 					value={info.firstName}
@@ -18,6 +20,7 @@ export const Info = (props) => {
 				/>
 				<br />
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='Enter your last name:   '
 					value={info.lastName}
@@ -26,8 +29,9 @@ export const Info = (props) => {
 					}
 				/>
 				<br />
-				<label>Email:</label>
+
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='email'
 					placeholder='Email id:   '
 					value={info.EmaiId}
@@ -36,8 +40,9 @@ export const Info = (props) => {
 					}
 				/>
 				<br />
-				<label>Phone Number:</label>
+
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='Ph number:   '
 					value={info.phoneNumber}
@@ -46,8 +51,8 @@ export const Info = (props) => {
 					}
 				/>
 				<br />
-				<label>Location :</label>
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='Location :   '
 					value={info.Address}
@@ -56,8 +61,9 @@ export const Info = (props) => {
 					}
 				/>
 				<br />
-				<label>Date of birth:</label>
+
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='Date of birth:   '
 					value={info.DOB}
@@ -66,8 +72,9 @@ export const Info = (props) => {
 					}
 				/>
 				<br />
-				<label>LinkedIn ID:</label>
+
 				<input
+					className=' bg-white  text-base text-gray-600 py-2  px-2 mt-1 mb-2 shadow-2xl rounded-md'
 					type='text'
 					placeholder='linkedin ID:   '
 					value={info.linkedin}

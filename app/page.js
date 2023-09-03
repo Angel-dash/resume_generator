@@ -30,7 +30,9 @@ export const ParentComponent = () => {
 	});
 	return (
 		<div>
-			<h1>This is the home page</h1>
+			<h1 className=' font-semibold text-lg  text-black text-center py-5'>
+				Welcome to CV-Generator
+			</h1>
 			<Info info={info} setInfo={setInfo} />
 			<Experience experience={experience} setExperience={setExperience} />
 			<Education education={education} setEducation={setEducation} />
