@@ -1,13 +1,49 @@
-import React from "react";
+import React, { useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 export const InfoCard = (props) => {
 	const { education, experience, info } = props;
+	const pdRef = useRef();
+
+	const downloadPDF = () => {
+		const input = pdfRef.current;
+		html2canvas(input).then(() => {
+			const imgData = canvas.toDataURL("image/png");
+			const pdf = new jsPDF("p", "mm", "a4", true);
+			const pdfWidth = pdf.internal.pageSize.getWidth();
+			const pdfHeight = pdf.internal.pageSize.getHeight();
+			const imgWidth = canvas.width;
+			const imgHeight = canvas.height;
+			const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+			const imgX = (imgWidth * ratio) / 2;
+			const imgY = 30;
+			pdf.addImage(
+				imgData,
+				"PNG",
+				imgX,
+				imgY,
+				imgWidth * ratio * imgHeight * ratio
+			);
+			pdf.save("Cv.pdf");
+		});
+	};
 
 	return (
-		<div className='bg-gray-100 p-10 mx-auto max-w-4xl sm:p-5 md:p-20 lg:p-40'>
-			<h1 className='text-5xl text-gray-800 font-bold'>
-				I'M {info.firstName} {info.lastName}
-			</h1>
+		<div
+			className='bg-gray-100 rounded-md p-10 mx-60 my-5 max-w-4xl sm:p-5 md:p-20 lg:p-40'
+			ref={pdRef}>
+			<div className='flex '>
+				<h1 className='text-3xl  mx-auto text-gray-800 font-bold'>
+					{info.firstName} {info.lastName}
+				</h1>
+				<button
+					className='bg-black text-white px-1 rounded-md'
+					onClick={downloadPDF}>
+					Download
+				</button>
+			</div>
+
 			<div className='bg-white shadow-lg rounded-lg mt-10 p-10'>
 				<h2 className='text-4xl text-teal-600 font-semibold'>Profile</h2>
 				<div className='grid grid-cols-2 gap-4 mt-4'>
@@ -78,6 +114,14 @@ export const InfoCard = (props) => {
 						and inspired me to continue pushing the boundaries of what's
 						possible in the ever-evolving world of technology.
 					</p>
+				</div>
+			</div>
+			<div className='bg-white shadow-lg rounded-lg mt-10 p-10'>
+				<h4 className='text-4xl text-red-700 font-semibold'>Contact</h4>
+				<div className='mt-4'>
+					<p>Phone Number:{info.phoneNumber}</p>
+					<p>Email:{info.EmaiId}</p>
+					<p>LinkedIn:{info.linkedin}</p>
 				</div>
 			</div>
 		</div>
