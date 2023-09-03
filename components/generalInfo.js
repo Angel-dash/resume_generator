@@ -57,7 +57,7 @@ export const Info = (props) => {
 					placeholder='Location :   '
 					value={info.Address}
 					onChange={(e) =>
-						setInfo((prev) => ({ ...prev, Location: e.target.value }))
+						setInfo((prev) => ({ ...prev, Address: e.target.value }))
 					}
 				/>
 				<br />
